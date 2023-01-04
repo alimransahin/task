@@ -17,35 +17,33 @@ const Home: React.FC = () => {
     return (
         <div className="overflow-x-auto">
             <input type='text' placeholder='search' onChange={(e) => setKey(e.target.value)} />
-            <table className="table w-full">
-                <thead>
-
-                    <tr>
-                        <th>Sl</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        {/* <th>Phone</th>
+            {
+                filteredData?.length === 0 ? 
+                <h2>No Data Found, Try again</h2> :
+                    <table className="table" style={{margin:"100px auto"}}>
+                        <thead>
+                            <tr>
+                                <th>Sl</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                {/* <th>Phone</th>
                         <th>Website</th>
                         <th>Adddress</th> */}
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        filteredData?.map((info: any, i: number) => <tr key={i}>
-                            
-                                <th>{i + 1}</th>
-                                <td><Link to={`/${info.name}`}> {info?.name}</Link></td>
-                                <td>{info.email}</td>
-                                {/* <td>{info.phone}</td>
-                            <td>{info.website}</td>
-                            <td>{info.address.city}</td> */}
-                            
-                        </tr>
-                        )
-                    }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                filteredData?.map((info: any, i: number) => <tr key={i}>
+                                    <th>{i + 1}</th>
+                                    <td><Link to={`/${info.name}`}> {info?.name}</Link></td>
+                                    <td>{info.email}</td>
+                                </tr>
+                                )
+                            }
 
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+            }
         </div>
 
     );

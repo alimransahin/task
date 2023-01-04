@@ -11,11 +11,11 @@ const Details = () => {
     return (
         <div>
             <Link to="/">Go to Home</Link>
-            <h2>{details.name}</h2>
-            <p>{details.email}</p>
-            <p>{details.phone}</p>
-            <p >{details.website}</p>
-            <p >{details.address.city}</p>
+            <h2>{details?.name}</h2>
+            <p>{details?.email}</p>
+            <p>{details?.phone}</p>
+            <p >{details?.website}</p>
+            <p >{details?.address?.city}</p>
         </div>
     )
 }
